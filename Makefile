@@ -1,3 +1,5 @@
+.PHONY: test 
+
 run: build 
 	@./bin/go-task-tracker-cli	
 	
@@ -6,3 +8,10 @@ debug: build
 
 build:
 	@go build -C cmd -o ../bin/go-task-tracker-cli
+
+test: 
+	@go test ./test/
+
+
+
+
