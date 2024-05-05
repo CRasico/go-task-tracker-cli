@@ -57,7 +57,7 @@ func (window *Window) Render() {
 	}
 
 	if window.HasBorder {
-		border := strings.Repeat("-", len(window.Pixels)+2)
+		border := strings.Repeat("-", len(window.Pixels[0])+2)
 		screen = border + "\n" + screen + border + "\n"
 	}
 
