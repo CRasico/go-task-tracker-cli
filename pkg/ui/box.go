@@ -1,19 +1,13 @@
 package ui
 
 type Box struct {
-	Title  string
-	Height int64
-	Width  int64
+	Title   string
+	Padding int64
 }
 
-func NewBox(title string, height int64, width int64) *Box {
+func NewBox(title string, padding int64) *Box {
 	return &Box{
-		Title:  title,
-		Height: height,
-		Width:  width,
+		Title:   title,
+		Padding: padding,
 	}
-}
-
-func (box Box) Render() string {
-	return ""
 }

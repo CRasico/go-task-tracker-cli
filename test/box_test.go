@@ -8,31 +8,15 @@ import (
 )
 
 func TestNewBox(t *testing.T) {
-	box := &ui.Box{
-		Title:  "Test",
-		Width:  1,
-		Height: 2,
+	want := &ui.Box{
+		Title:   "Test",
+		Padding: 1,
 	}
 
-	result := ui.NewBox("Test", 1, 2)
+	got := ui.NewBox("Test", 1)
 
-	if !reflect.DeepEqual(box, result) {
-		t.Error("The created box does not equal the expected box")
-		t.Fail()
-	}
-}
-
-func TestRender(t *testing.T) {
-	expected := `---Test---
-|        |
-----------`
-
-	box := ui.NewBox("Test", 7, 3)
-
-	result := box.Render()
-
-	if !reflect.DeepEqual(expected, result) {
-		t.Error("The ascii art did not render")
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf(`got %q box but expected %q`, got, want)
 		t.Fail()
 	}
 }

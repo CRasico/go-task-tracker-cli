@@ -4,6 +4,8 @@ import (
 	"flag"
 	"log/slog"
 	"os"
+
+	"github.com/crasico/go-task-tracker-cli/pkg/ui"
 )
 
 func main() {
@@ -14,6 +16,11 @@ func main() {
 
 	logger := setupLogger(isDebug)
 	logger.Debug("Starting Up Go Task Tracker CLI")
+
+	window := ui.NewWindow(ui.WindowArgs{Width: 10, Height: 10, HasBorder: true})
+
+	window.Draw(3, 3, '+')
+	window.Render()
 }
 
 func setupLogger(isDebug bool) *slog.Logger {
