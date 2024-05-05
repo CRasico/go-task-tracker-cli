@@ -19,7 +19,7 @@ func main() {
 	logger := setupLogger(isDebug)
 	logger.Debug("Starting Up Go Task Tracker CLI")
 
-	window := ui.NewWindow(ui.WindowArgs{Width: 20, Height: 10, HasBorder: true})
+	window := ui.NewWindow(ui.WindowArgs{Width: 50, Height: 20, HasBorder: true})
 
 	window.Render()
 
